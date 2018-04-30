@@ -39,7 +39,7 @@ try {
               response.on('data', (chunk) => { body += chunk })
               response.on('end', () => {
                   var data = JSON.parse(body)
-		  if data["Response"] != false { 
+		  if (data["Response"] != false) { 
 		  // Movie info
                   var title = data["Title"]
 	       	  var released = data["Released"]
@@ -55,6 +55,7 @@ The runtime is ${runtime} and has a rating of ${rating} on IMDB. The cast includ
 			  {}
                       )
                   )
+		}
               })
             })
             break;
